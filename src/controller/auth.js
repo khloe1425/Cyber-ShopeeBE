@@ -57,6 +57,17 @@ const generateAccessToken=(user)=>{
     return accessToken
 }
 
+const getLogin=async(req,res)=>{
+    res.render('login')
+}
+const getRegister=async(req,res)=>{
+    try{
+        res.render('register')
+    }catch(error){
+        console.log(error)
+    }
+}
+
 const login=async(req,res)=>{
     try{ 
         const {email,password}=req.body
@@ -108,4 +119,4 @@ const logOut=(req,res)=>{
 const getUser=(req,res)=>{
     res.json({user:req.user})
 }
-module.exports={getHomepage,login,logOut,register,uploadAvatar,getUser,generateAccessToken}
+module.exports={getHomepage,login,getLogin,logOut,register,getRegister,uploadAvatar,getUser,generateAccessToken}
