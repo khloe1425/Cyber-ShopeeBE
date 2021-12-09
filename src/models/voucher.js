@@ -3,14 +3,14 @@ const db =require('../config/db')
 
 
 const Voucher=db.define('Voucher',{
-    // userId:{
-    //     type:DataTypes.INTEGER,
-    //     allowNull:false
-    // },
-    // itemId:{
-    //     type:DataTypes.INTEGER,
-    //     allowNull:false
-    // },
+    userId:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    itemId:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
     percent:{
         type:DataTypes.INTEGER,
         allowNull:false

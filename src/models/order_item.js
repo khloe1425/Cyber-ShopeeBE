@@ -1,12 +1,12 @@
 const db=require('../config/db')
 const { DataTypes } = require('sequelize')
 const OrderItem=db.define('OrderItem',{
-    // orderId:{
-    //     type:DataTypes.INTEGER, 
-    // },
-    // itemId:{
-    //     type:DataTypes.INTEGER,
-    // },
+    orderId:{
+        type:DataTypes.INTEGER, 
+    },
+    itemId:{
+        type:DataTypes.INTEGER,
+    },
     quantity:{
         type:DataTypes.INTEGER,
         allowNull:false

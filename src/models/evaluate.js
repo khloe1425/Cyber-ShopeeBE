@@ -3,7 +3,7 @@ const db=require('../config/db')
 const { DataTypes } = require('sequelize')
 
 const Evaluate=db.define('Evaluate',{
-    // userId:DataTypes.INTEGER,
+    userId:DataTypes.INTEGER,
     itemId:DataTypes.INTEGER,
     comment:DataTypes.TEXT,
     rating:{

@@ -8,10 +8,10 @@ const Item=db.define('Item',{
         type:DataTypes.STRING,
         allowNull:false
     },
-    // shopId:{
-    //     type:DataTypes.STRING,
-    //     allowNull:false
-    // },
+    shopId:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
     description:{
         type:DataTypes.TEXT
     },
@@ -55,7 +55,7 @@ const Item=db.define('Item',{
         }
     },
     pickUpTime:DataTypes.INTEGER,
-    // categoryId:DataTypes.INTEGER
+    categoryId:DataTypes.INTEGER
 })
 Item.calculatePrice=(item)=>{
     if(item.flashSaleTime && 

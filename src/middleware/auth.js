@@ -7,7 +7,7 @@ const jwt=require('jsonwebtoken')
 const checkUser=async(req,res,next)=>{
     try{
         const token = req.cookies['jwt']
-        const decoded = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET)
+        const decoded = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET || 'test')
         const user=await User.findOne({where:{id:decoded.sub},include:[{model:Cart}]})
         if(!user){
             next()

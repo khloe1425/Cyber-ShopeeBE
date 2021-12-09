@@ -8,10 +8,10 @@ const Category=db.define('Category',{
         unique:true
     },
     logo:DataTypes.STRING,
-    // mainCategoryId:{
-    //     type:DataTypes.INTEGER,
-    //     allowNull:false
-    // }
+    mainCategoryId:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    }
 }
 )
 

@@ -19,9 +19,9 @@ Order.belongsTo(ShippingCompany,{foreignKey:'shippingCompanyId'})
 ShippingCompany.hasMany(Order,{foreignKey:'shippingCompanyId'})
 
 Shop.hasMany(Item)
-// Item.belongsTo(Shop,{
-//     foreignKey:'shopId'
-// })
+Item.belongsTo(Shop,{
+    foreignKey:'shopId'
+})
 User.hasOne(Shop,{
     onDelete:'CASCADE'
 })
@@ -30,38 +30,38 @@ Shop.belongsTo(User,{
 })
 
 Category.hasMany(Item)
-// Item.belongsTo(Category,{foreignKey:'categoryId'})
+Item.belongsTo(Category,{foreignKey:'categoryId'})
 
 
-// Order.belongsTo(User,{foreignKey:'UserId'})
+Order.belongsTo(User,{foreignKey:'UserId'})
 User.hasMany(Order)
 
-// OrderItem.belongsTo(Order,{foreignKey:'orderId'})
+OrderItem.belongsTo(Order,{foreignKey:'orderId'})
 Order.hasMany(OrderItem)
 
-// OrderItem.belongsTo(Item,{foreignKey:'itemId'})
-// Item.hasMany(OrderItem,{foreignKey:'itemId'})
+OrderItem.belongsTo(Item,{foreignKey:'itemId'})
+Item.hasMany(OrderItem,{foreignKey:'itemId'})
 
 Evaluate.belongsTo(Item,{foreignKey:'itemId',foreignKeyConstraint: true,onDelete:'cascade'})
 Item.hasMany(Evaluate,{foreignKey:'itemId',foreignKeyConstraint: true})
 
-// Evaluate.belongsTo(User,{foreignKey:'userId',onDelete:'CASCADE'})
+Evaluate.belongsTo(User,{foreignKey:'userId',onDelete:'CASCADE'})
 User.hasMany(Evaluate,{hooks: true})
 
-// Follow.belongsTo(User,{foreignKey:'userId'})
+Follow.belongsTo(User,{foreignKey:'userId'})
 User.hasMany(Follow,{onDelete:'CASCADE'})
 
-// Follow.belongsTo(Shop,{foreignKey:'shopId'})
+Follow.belongsTo(Shop,{foreignKey:'shopId'})
 Shop.hasMany(Follow,{onDelete:'CASCADE'})
 
-// Voucher.belongsTo(User,{foreignKey:'userId'})
+Voucher.belongsTo(User,{foreignKey:'userId'})
 User.hasMany(Voucher,{onDelete:'CASCADE'})
 
-// Voucher.belongsTo(Item,{foreignKey:'itemId',onDelete:'CASCADE'})
+Voucher.belongsTo(Item,{foreignKey:'itemId',onDelete:'CASCADE'})
 Item.hasMany(Voucher,{onDelete:'CASCADE'})
 
 MainCategory.hasMany(Category)
-// Category.belongsTo(MainCategory,{foreignKey:'mainCategoryId'})
+Category.belongsTo(MainCategory,{foreignKey:'mainCategoryId'})
 
 Cart.belongsTo(User,{foreignKey:'userId'})
 User.hasMany(Cart,{foreignKey:'userId'})

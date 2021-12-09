@@ -53,19 +53,8 @@ const generateAccessToken=(user)=>{
         sub:user.id,
         iat:Date.now()
     }
-    const accessToken=jwt.sign(payload,process.env.ACCESS_TOKEN_SECRET)
+    const accessToken=jwt.sign(payload,process.env.ACCESS_TOKEN_SECRET || 'test')
     return accessToken
-}
-
-const getLogin=async(req,res)=>{
-    res.render('login')
-}
-const getRegister=async(req,res)=>{
-    try{
-        res.render('register')
-    }catch(error){
-        console.log(error)
-    }
 }
 
 const login=async(req,res)=>{
@@ -119,4 +108,4 @@ const logOut=(req,res)=>{
 const getUser=(req,res)=>{
     res.json({user:req.user})
 }
-module.exports={getHomepage,login,getLogin,logOut,register,getRegister,uploadAvatar,getUser,generateAccessToken}
+module.exports={getHomepage,login,logOut,register,uploadAvatar,getUser,generateAccessToken}

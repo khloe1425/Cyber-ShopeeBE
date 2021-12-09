@@ -5,10 +5,10 @@ const db = require('../config/db')
 
 
 const Order = db.define('Order', {
-    // userId: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false
-    // },
+    userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     status: {
         type: DataTypes.ENUM('preparing', 'transporting', 'deleted', 'completed'),
         defaultValue: 'preparing'

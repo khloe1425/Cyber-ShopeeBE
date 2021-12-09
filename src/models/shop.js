@@ -9,11 +9,11 @@ const Shop=db.define('Shop',
             allowNull:false,
             unique:true
         },
-        // userId:{
-        //     type:DataTypes.INTEGER,
-        //     allowNull:false,
-        //     unique:true,
-        // },
+        userId:{
+            type:DataTypes.INTEGER,
+            allowNull:false,
+            unique:true,
+        },
         address:DataTypes.STRING,
         revenue:{
             type:DataTypes.INTEGER,
