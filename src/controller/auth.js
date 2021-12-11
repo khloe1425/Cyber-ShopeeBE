@@ -87,7 +87,6 @@ const login=async(req,res)=>{
             return res.cookie('jwt',accessToken).json({success:true})
         }
     }catch(error){
-        console.log(error)
         return res.status(500).json({success:false,message:'server error'})
     }
 }
