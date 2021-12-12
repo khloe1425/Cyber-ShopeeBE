@@ -24,7 +24,6 @@ router.put('/edit-item/:itemId',isAuth,myShop,checkShopHasItem,uploadItemImage,e
 router.delete('/delete-image/:itemId',isAuth,myShop,checkShopHasItem,deleteImage)
 router.delete('/delete-item/:itemId',isAuth,myShop,checkShopHasItem,deleteItem)
 
-
 //voucher
 router.post('/add-voucher/:itemId',isAuth,myShop,checkShopHasItem,addVoucherImage,addVoucher)
 router.get('/add-voucher/:itemId',isAuth,myShop,checkShopHasItem,getAddVoucher)

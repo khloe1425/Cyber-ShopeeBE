@@ -24,14 +24,11 @@ router.get('/delete-account/:userId',isAdmin,deleteAccount)
 router.get('/user/:userId',isAdmin,getUser)
 
 //shipping company
-
 router.get('/add-shipping-company',isAuth,isAdmin,getAddShippingCompany)
 router.post('/add-shipping-company',isAuth,isAdmin,addShippingCompany)
 router.get('/shipping-companies',isAuth,isAdmin,getAllShippingCompany)
 router.post('/update-ship-time/:id',isAdmin,updateTime)
 router.get('/delete-shipping-company/:id',isAdmin,deleteShippingCompany)
-
-
 
 //main category
 router.get('/main-categories',isAdmin,getAllMainCategories)

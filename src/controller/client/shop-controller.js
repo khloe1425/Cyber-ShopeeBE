@@ -19,7 +19,7 @@ const addShop = async (req, res) => {
         const image = req.file ? `/uploads/shop/${req.file.filename}` : null
         await Shop.create({ name, userId, address, image })
         res.json({ success: true, message: 'tạo thành công' })
-    } catch (error) {
+    } catch (error) {   
         res.json({ success: false, message: error.message })
     }
 }
